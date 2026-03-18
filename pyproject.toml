@@ -5,10 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "aiosqlite>=0.22.1",
     "asyncio>=4.0.0",
     "dataclasses>=0.8",
+    "fastapi>=0.135.1",
+    "fastapi-users[sqlalchemy]>=15.0.4",
+    "imagekitio>=5.2.0",
     "ipykernel>=7.2.0",
     "pydantic>=2.12.5",
+    "python-dotenv>=1.2.2",
+    "uvicorn[standart]>=0.42.0",
 ]
 
 [tool.ruff.lint]

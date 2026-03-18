@@ -8,3 +8,30 @@ wheels/
 
 # Virtual environments
 .venv
+
+# uv
+uv.lock
+.python-version
+
+# Ruff
+.ruff_cache/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

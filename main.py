@@ -1,10 +1,5 @@
-from utils import add, capitalize, COLOR
+from basic.cars import Car
 
-s = "paris is capital of France"
-res = capitalize(s)
-print(res)
+c1 = Car("Toyota", "Corolla", 2020)
 
-print(COLOR)
-
-res2 = add(2, 5)
-print(res2)
+print(c1.__dict__)

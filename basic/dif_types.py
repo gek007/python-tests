@@ -1,10 +1,23 @@
 from collections import deque
+from typing import TypedDict
+
+
+# for LangGraph
+class State(TypedDict):
+    total: int
+    unique: int
+    label_count: int
+    has_edges: bool
 
 
 def list_example(items: list[int]) -> int:
     labels_tuple = ("sum", "count")
     seen_set = set(items)
-    info_dict = {"total": sum(items), "unique": len(seen_set), "label_count": len(labels_tuple)}
+    info_dict = {
+        "total": sum(items),
+        "unique": len(seen_set),
+        "label_count": len(labels_tuple),
+    }
     return info_dict["total"]
 
 
@@ -35,7 +48,11 @@ def string_example(text: str) -> int:
     chars_list = list(text)
     unique_chars = set(chars_list)
     edges_tuple = (text[:1], text[-1:] if text else "")
-    info_dict = {"length": len(chars_list), "unique": len(unique_chars), "has_edges": any(edges_tuple)}
+    info_dict = {
+        "length": len(chars_list),
+        "unique": len(unique_chars),
+        "has_edges": any(edges_tuple),
+    }
     return info_dict["length"]
 
 
@@ -50,7 +67,11 @@ def bytes_example(data: bytes) -> int:
     values_list = list(data)
     values_set = set(values_list)
     header_tuple = (values_list[0],) if values_list else tuple()
-    summary = {"len": len(values_list), "unique": len(values_set), "has_header": bool(header_tuple)}
+    summary = {
+        "len": len(values_list),
+        "unique": len(values_set),
+        "has_header": bool(header_tuple),
+    }
     return summary["len"]
 
 

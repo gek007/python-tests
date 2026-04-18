@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:claudefa.st)",
+      "Bash(grep -E \"\\\\.json|\\\\.toml|\\\\.cfg|\\\\.txt|\\\\.env|Makefile|Procfile|docker|\\\\.py$\")"
+    ]
+  }
+}

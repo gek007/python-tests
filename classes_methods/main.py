@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from pathlib import Path
 
 
 # instance methods
@@ -51,3 +52,9 @@ class Peope(Person):
 
 peope = Peope(name="John", age=30, email="john@example.com", country="Israel")
 print(peope)
+
+
+_ROOT = Path(__file__).resolve().parent
+data_file = _ROOT / "data" / "data.txt"
+print(data_file.read_text())
+

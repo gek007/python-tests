@@ -13,6 +13,8 @@ from langgraph.graph import START, StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
 
+from .helper import gen_png_graph
+
 _pkg_dir = Path(__file__).resolve().parent
 for _env in (_pkg_dir / ".env", _pkg_dir.parent / ".env"):
     if _env.exists():
@@ -91,6 +93,11 @@ try:
 except Exception:
     pass
 
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+graph_path = current_dir + "/graph.png"
+
+gen_png_graph(graph, graph_path)
 
 config = {"configurable": {"thread_id": "1"}}
 

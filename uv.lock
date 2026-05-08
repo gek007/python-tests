@@ -14,6 +14,15 @@ resolution-markers = [
 ]
 
 [[package]]
+name = "aiofiles"
+version = "25.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/41/c3/534eac40372d8ee36ef40df62ec129bee4fdb5ad9706e58a29be53b2c970/aiofiles-25.1.0.tar.gz", hash = "sha256:a8d728f0a29de45dc521f18f07297428d56992a742f0cd2701ba86e44d23d5b2", size = 46354, upload-time = "2025-10-09T20:51:04.358Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bc/8a/340a1555ae33d7354dbca4faa54948d76d89a27ceef032c8c3bc661d003e/aiofiles-25.1.0-py3-none-any.whl", hash = "sha256:abe311e527c862958650f9438e859c1fa7568a141b22abcd015e120e86a85695", size = 14668, upload-time = "2025-10-09T20:51:03.174Z" },
+]
+
+[[package]]
 name = "aiohappyeyeballs"
 version = "2.6.1"
 source = { registry = "https://pypi.org/simple" }
@@ -359,6 +368,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/c0/f6/688d2cd64bfd0b14d805ddb8a565e11ca1fb0fd6817175d58b10052b6d88/bcrypt-5.0.0-cp39-abi3-win32.whl", hash = "sha256:64d7ce196203e468c457c37ec22390f1a61c85c6f0b8160fd752940ccfb3a683", size = 153725, upload-time = "2025-09-25T19:50:34.384Z" },
     { url = "https://files.pythonhosted.org/packages/9f/b9/9d9a641194a730bda138b3dfe53f584d61c58cd5230e37566e83ec2ffa0d/bcrypt-5.0.0-cp39-abi3-win_amd64.whl", hash = "sha256:64ee8434b0da054d830fa8e89e1c8bf30061d539044a39524ff7dec90481e5c2", size = 150912, upload-time = "2025-09-25T19:50:35.69Z" },
     { url = "https://files.pythonhosted.org/packages/27/44/d2ef5e87509158ad2187f4dd0852df80695bb1ee0cfe0a684727b01a69e0/bcrypt-5.0.0-cp39-abi3-win_arm64.whl", hash = "sha256:f2347d3534e76bf50bca5500989d6c1d05ed64b440408057a37673282c654927", size = 144953, upload-time = "2025-09-25T19:50:37.32Z" },
+]
+
+[[package]]
+name = "braq"
+version = "0.0.12"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/54/3b/1b918c408e11ca33f9b9dcecc8e08eac7762887dd42b584f0efb6fe26c55/braq-0.0.12.tar.gz", hash = "sha256:51dae51b863cbba2cd37da163df06b7dc5124904d2c26b92bda54c1bde66d74b", size = 15272, upload-time = "2024-12-10T20:48:53.856Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f3/53/ed5082619966b1d15b5c039ac722ba99956d92d4b08a9bd5eb4c3535cc1f/braq-0.0.12-py3-none-any.whl", hash = "sha256:41b7bdd0d004faef693751615fbb11c53ac0b886c772b83aea61ea6dc2f6e518", size = 26392, upload-time = "2024-12-10T20:48:50.813Z" },
 ]
 
 [[package]]
@@ -1348,6 +1366,19 @@ wheels = [
 ]
 
 [[package]]
+name = "kvf"
+version = "0.0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "braq" },
+    { name = "paradict" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9c/f8/e1826c156d4f97cf4662a6110cbbcfd91b5e5570c8a88bf0a8270718621e/kvf-0.0.3.tar.gz", hash = "sha256:f4885b1bbe66c8c20fdabe5cedeb3c0e5d12a54ac495f9e5fcf6fed0e0c51b73", size = 4938, upload-time = "2024-12-10T20:49:13.171Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a8/db/4a8d3b1fef45cabcadf36f9a2231b2cde3dddd3a58ab1723119c7fbce34f/kvf-0.0.3-py3-none-any.whl", hash = "sha256:9d666e51cae512e3f95c55b77524e34d0095b278c81f96f7bbc7d37b5bd545c6", size = 4716, upload-time = "2024-12-10T20:49:11.815Z" },
+]
+
+[[package]]
 name = "langchain"
 version = "1.2.15"
 source = { registry = "https://pypi.org/simple" }
@@ -1744,6 +1775,7 @@ name = "my-test"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "aiofiles" },
     { name = "aiosqlite" },
     { name = "asyncio" },
     { name = "dataclasses" },
@@ -1760,12 +1792,14 @@ dependencies = [
     { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "requests" },
+    { name = "shared" },
     { name = "sqlalchemy" },
     { name = "uvicorn", extra = ["standard"] },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "aiofiles", specifier = ">=25.1.0" },
     { name = "aiosqlite", specifier = ">=0.22.1" },
     { name = "asyncio", specifier = ">=4.0.0" },
     { name = "dataclasses", specifier = ">=0.8" },
@@ -1782,6 +1816,7 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2.12.5" },
     { name = "python-dotenv", specifier = ">=1.2.2" },
     { name = "requests", specifier = ">=2.33.1" },
+    { name = "shared", specifier = ">=0.0.32" },
     { name = "sqlalchemy", specifier = ">=2.0" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.42.0" },
 ]
@@ -2035,6 +2070,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/e4/a5/2f6ed612056819de445a433ca1f2821ac3dab7f150d569a59e9cc105de1d/pandas-3.0.2-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:734be7551687c00fbd760dc0522ed974f82ad230d4a10f54bf51b80d44a08702", size = 11815274, upload-time = "2026-03-31T06:48:22.695Z" },
     { url = "https://files.pythonhosted.org/packages/00/2f/b622683e99ec3ce00b0854bac9e80868592c5b051733f2cf3a868e5fea26/pandas-3.0.2-cp314-cp314t-win_amd64.whl", hash = "sha256:57a07209bebcbcf768d2d13c9b78b852f9a15978dac41b9e6421a81ad4cdd276", size = 10888530, upload-time = "2026-03-31T06:48:25.806Z" },
     { url = "https://files.pythonhosted.org/packages/cb/2b/f8434233fab2bd66a02ec014febe4e5adced20e2693e0e90a07d118ed30e/pandas-3.0.2-cp314-cp314t-win_arm64.whl", hash = "sha256:5371b72c2d4d415d08765f32d689217a43227484e81b2305b52076e328f6f482", size = 9455341, upload-time = "2026-03-31T06:48:28.418Z" },
+]
+
+[[package]]
+name = "paradict"
+version = "0.0.16"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/40/83/8cf8d94be55ab9ea783e1f8ece06059cd986bb482ad69f7be549839b9e07/paradict-0.0.16.tar.gz", hash = "sha256:d909d122bf47028a45334eb2280d1e1bcb401fda89986af42c39fd2fadf9de4d", size = 61471, upload-time = "2024-12-10T21:23:49.007Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1d/f9/a9807d307ba1837bb8799e1337f41edcdbb92ef6090668dc50f483a168bf/paradict-0.0.16-py3-none-any.whl", hash = "sha256:28df79f0dc0e68c8f8a3e9b7c75e67a85305ef7298653fc7a369a1bf4f58cb20", size = 61735, upload-time = "2024-12-10T21:23:45.408Z" },
 ]
 
 [[package]]
@@ -2711,6 +2755,19 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz", hash = "sha256:bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c", size = 52289, upload-time = "2022-05-26T13:35:23.454Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/6a/23/8146aad7d88f4fcb3a6218f41a60f6c2d4e3a72de72da1825dc7c8f7877c/semantic_version-2.10.0-py2.py3-none-any.whl", hash = "sha256:de78a3b8e0feda74cabc54aab2da702113e33ac9d9eb9d2389bcf1f58b7d9177", size = 15552, upload-time = "2022-05-26T13:35:21.206Z" },
+]
+
+[[package]]
+name = "shared"
+version = "0.0.32"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "kvf" },
+    { name = "paradict" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3f/39/f39c2560ac971efbf437f7ffa1d82a12fa77f50b0127e6e5ec5cc8d377df/shared-0.0.32.tar.gz", hash = "sha256:7308adc95c0dab14d0c99635cd8049d1f004cc7fef7396d3fe47323c34ec58c6", size = 7793, upload-time = "2024-12-10T20:49:22.469Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f9/03/da58e40386d8ebcdfa3617070a95ca1deb5a5e6aa3d4e15ea2045173d5ac/shared-0.0.32-py3-none-any.whl", hash = "sha256:f17962c0f0fe6a23015accc7cac029e1c24c4b14578094e1f7033a7a7ef16140", size = 29304, upload-time = "2024-12-10T20:49:19.763Z" },
 ]
 
 [[package]]

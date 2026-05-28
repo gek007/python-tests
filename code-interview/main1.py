@@ -1,3 +1,5 @@
+from pathlib import Path
+
 # def add_user(name: str, tags=None):
 #     if tags is None:
 #         tags = []
@@ -307,33 +309,80 @@
 # =
 
 
-def get_number():
-    for num in range(10):
-        yield num
+# # def get_number():
+# #     for num in range(10):
+# #         yield num
 
 
-lst = get_number()
+# # lst = get_number()
 
-num_list = list(lst)
-print(num_list)
+# # num_list = list(lst)
+# # print(num_list)
+
+# # # =============
+
+
+# # def get_number():
+# #     for num in range(10):
+# #         yield num
+
+
+# # lst = get_number()
+# # num_list = list(lst)
+# # print(num_list)
+
+
+# # def process_large_file(filename):
+# #     def process_line(line):
+# #         return line.strip()
+
+# #     with open(filename) as f:
+# #         for line in f:
+#             yield process_line(line)
 
 # =============
 
+# class MyClass:
+#     def __new__(cls):
+#         print("__new__ called")
+#         return super().__new__(cls)
 
-def get_number():
-    for num in range(10):
-        yield num
+#     def __init__(self):
+#         print("__init__ called")
+
+# obj = MyClass()
 
 
-lst = get_number()
-num_list = list(lst)
-print(num_list)
+# class MyClass2:
+#     _instance  = None
+
+#     def __new__(cls):
+#         if cls._instance is None:
+#             cls._instance = super().__new__(cls)
+#         return cls._instance
+
+#     def __init__(self):
+#         print("__init__ called")
+
+# obj2 = MyClass2()
+# obj3 = MyClass2()
+
+# print(obj2 is obj3)
+
+# =============
+
+cur_path = Path(__file__).parent
+file_path = cur_path / "test.txt"
 
 
-def process_large_file(filename):
-    def process_line(line):
+def process_file(file_path):
+    def handle_line(line):
         return line.strip()
 
-    with open(filename) as f:
-        for line in f:
-            yield process_line(line)
+    with open(file_path, "r+", encoding="utf-8") as file:
+        for line in file:
+            yield handle_line(line)
+
+
+for line in process_file(file_path):
+    print(line)

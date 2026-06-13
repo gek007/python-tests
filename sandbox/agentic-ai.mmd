@@ -1,0 +1,15 @@
+flowchart TD
+    A[Perception: Collect data] --> B[Reasoning: Analyze and interpret]
+    B --> C[Goal Setting: Define objectives / plan]
+    C --> D[Decision Making: Choose next action]
+    D --> E[Execution: Act via tools or APIs]
+    E --> F[Observation: Read results & update memory]
+    F --> G[Learning & Adaptation: Improve from feedback]
+    G --> D
+    subgraph Orchestration
+      H[Coordinate multiple agents / workflows]
+    end
+    G --> H
+    H --> A
+    classDef agentic fill:#cfe2f3,stroke:#084c61,stroke-width:2px;
+    class A,B,C,D,E,F,G,H agentic
